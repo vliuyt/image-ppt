@@ -21,4 +21,13 @@ Date: 2026-08-25
 
 Raw machine reports contain workstation paths, so they are excluded from the public repository. This file preserves the release summary without personal paths or private deck content.
 
-Online repository and GitHub Actions status remain pending until publication.
+## Online validation
+
+| Check | Result |
+|---|---|
+| Public repository | `vliuyt/image-ppt`, visibility PUBLIC |
+| Default branch | `main` |
+| Release | `v0.3.0` published |
+| Main GitHub Actions run | Success |
+| Installer discovery | `npx skills add vliuyt/image-ppt --list` found exactly one Skill: `image-ppt` |
+| Maintenance automation | Monthly CI and Dependabot active; initial update PRs created |
