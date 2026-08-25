@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-08-25",
+  "capabilities": {
+    "file_write": {
+      "decision": "approved",
+      "reviewer": "local skill author",
+      "scope": "Write only user-selected deck outputs, QA reports, contact sheets, and PDFs. Manifest image paths must stay under slides/. Existing contact sheets and PDFs are preserved unless --overwrite is explicit.",
+      "reason": "The workflow must save generated slide assets, record validation evidence, build a contact sheet, and assemble the final PDF.",
+      "expires_at": "2026-11-30",
+      "evidence": [
+        "scripts/validate_deck.py",
+        "scripts/build_contact_sheet.py",
+        "scripts/assemble_pdf.py",
+        "reports/security_trust_report.md"
+      ],
+      "target_enforcement": {
+        "openai": "metadata-only permission contract plus host workspace approval",
+        "claude": "adapter permission contract plus local filesystem approval",
+        "generic": "adapter permission contract plus operator approval",
+        "vscode": "adapter permission contract plus VS Code workspace trust"
+      }
+    }
+  }
+}

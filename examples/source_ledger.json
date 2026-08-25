@@ -1,0 +1,28 @@
+{
+  "research_mode": "research-backed",
+  "content_boundary": "Use the named primary work for plot; label later tradition separately.",
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Primary source title",
+      "kind": "primary",
+      "creator": "Author or tradition",
+      "edition_or_date": "Named edition",
+      "location": "https://example.org/primary-source",
+      "accessed": "2026-08-25",
+      "notes": "Main source for plot and wording"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLM-001",
+      "text": "A precise factual claim that may appear on slide two.",
+      "source_ids": ["SRC-001"],
+      "confidence": "high",
+      "source_layer": "primary",
+      "support_type": "direct",
+      "caveat": "",
+      "allowed_slides": [2]
+    }
+  ]
+}

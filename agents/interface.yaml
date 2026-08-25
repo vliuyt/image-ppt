@@ -1,0 +1,26 @@
+interface:
+  display_name: "Image-PPT"
+  short_description: "研究溯源后生成不可编辑的逐页图片与 PDF"
+  default_prompt: "Use $image-ppt only after confirming I want a non-editable presentation made from flattened 16:9 slide images and an ordered PDF. Verify the current runtime can call gpt-image-2, prefer Codex built-in image generation, and require explicit approval for an OpenAI API route. Without a compatible image route, produce a planning handoff only. Research and source-lock the content, validate every generated slide, and assemble the PDF only after all gates pass."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+    - "vscode"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "full with Codex built-in image generation; conditional with an explicitly authorized gpt-image-2 API route"
+    claude: "planning-only unless the host exposes a callable gpt-image-2 image-generation tool"
+    generic: "planning-only unless the host exposes a callable gpt-image-2 image-generation tool"
+    vscode: "planning-only unless the host exposes a callable gpt-image-2 image-generation tool"

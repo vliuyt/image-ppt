@@ -1,0 +1,36 @@
+{
+  "name": "image-ppt",
+  "version": "0.3.0",
+  "owner": "vliuyt",
+  "updated_at": "2026-08-25",
+  "status": "active",
+  "maturity_tier": "library",
+  "lifecycle_stage": "library",
+  "context_budget_tier": "library",
+  "review_cadence": "monthly",
+  "skill_archetype": "workflow",
+  "target_platforms": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible",
+    "vscode"
+  ],
+  "runtime_support": {
+    "preferred": "codex-with-built-in-gpt-image-2",
+    "conditional": [
+      "agent-runtime-with-callable-gpt-image-2-tool",
+      "explicitly-authorized-openai-api-gpt-image-2"
+    ],
+    "without_image_generation": "planning-only"
+  },
+  "factory_components": [
+    "references",
+    "scripts",
+    "evals",
+    "examples",
+    "security",
+    "reports",
+    "assets"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fallback_positive_concepts": ["flattened_deck", "pdf_delivery", "deck_scope"],
+  "positive_concepts": {
+    "flattened_deck": {
+      "weight": 0.42,
+      "phrases": ["image-ppt", "non-editable", "flattened", "image-only slide deck", "full-slide image", "one full-slide image per page", "slide images", "image-first presentation", "不可编辑", "图片版ppt", "逐页图片", "幻灯片图片", "完整幻灯片图片", "图片型演示文稿", "固定版式"]
+    },
+    "pdf_delivery": {
+      "weight": 0.26,
+      "phrases": ["ordered pdf", "export pdf", "assemble into a pdf", "into a pdf", "pdf handoff", "合并成pdf", "最终交付pdf", "交付一份pdf", "图片 + pdf", "图片加pdf"]
+    },
+    "deck_scope": {
+      "weight": 0.18,
+      "phrases": ["presentation", "slide deck", "slides", "ppt", "幻灯片", "演示文稿", "演示", "30张", "每一页", "one per page"]
+    },
+    "research_backed": {
+      "weight": 0.08,
+      "phrases": ["research-backed", "research sources", "source-traceable", "research and source", "研究资料", "完整研究", "来源溯源", "科普内容"]
+    },
+    "gpt_image_route": {
+      "weight": 0.06,
+      "phrases": ["gpt-image-2", "codex built-in image", "callable gpt-image-2", "image 2.0", "image二点零", "image 2.0模型", "图片生成能力"]
+    }
+  },
+  "negative_concepts": {
+    "editable_pptx": {
+      "weight": 0.78,
+      "exclusive": true,
+      "phrases": ["editable pptx", "editable powerpoint", "native charts", "editable later", "可编辑的pptx", "可编辑ppt", "文字可修改", "图表可修改", "备注都要能修改"]
+    },
+    "html_presentation": {
+      "weight": 0.78,
+      "exclusive": true,
+      "phrases": ["single-file html", "html presentation", "browser presentation", "responsive html", "html网页演示", "单文件html", "浏览器翻页", "网页版画廊"]
+    },
+    "isolated_image": {
+      "weight": 0.68,
+      "exclusive": true,
+      "phrases": ["one image", "single image", "cover illustration", "one cover", "一张", "一幅", "一张配图", "活动海报"]
+    },
+    "not_producing": {
+      "weight": 0.6,
+      "exclusive": true,
+      "phrases": ["do not generate", "do not create files", "暂时不要生成", "不要制作文件", "只评价", "优缺点"]
+    },
+    "unconfirmed_format": {
+      "weight": 0.5,
+      "exclusive": true,
+      "phrases": ["not sure", "不确定", "pptx还是pdf", "make a ppt", "做一套ppt", "帮我做一套ppt"]
+    }
+  }
+}

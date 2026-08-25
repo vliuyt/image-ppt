@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a focused workflow or compatibility improvement
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Describe the presentation workflow problem this would solve.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: boundary
+    attributes:
+      label: Runtime boundary
+      options:
+        - Codex built-in
+        - Authorized OpenAI API
+        - Other callable gpt-image-2 tool
+        - Planning-only
+        - Runtime-independent
+    validations:
+      required: true

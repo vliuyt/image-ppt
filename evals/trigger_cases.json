@@ -1,0 +1,32 @@
+{
+  "recommended_threshold": 0.46,
+  "should_trigger": [
+    {"text": "请用 Image-PPT 研究资料，生成不可编辑的逐页图片并合并为PDF。", "family": "zh_brand_explicit"},
+    {"text": "请把这套科普内容做成不可编辑的16:9逐页图片，最后合并成PDF。", "family": "zh_explicit_image_pdf"},
+    {"text": "我要图片版PPT，每一页都用gpt-image-2完整生成，交付一份PDF。", "family": "zh_model_explicit"},
+    {"text": "已经确认不需要可编辑，请研究资料后生成30张完整幻灯片图片并合成PDF。", "family": "zh_confirmed_flattened"},
+    {"text": "Use gpt-image-2 to create a research-backed 16:9 image-only slide deck and assemble the pages into a PDF.", "family": "en_explicit_image_pdf"},
+    {"text": "The deck can be flattened and non-editable. Generate one full-slide image per page, validate the set, and export an ordered PDF.", "family": "en_confirmed_flattened"},
+    {"text": "在支持 Agent Skills 的其他环境里调用可用的 gpt-image-2 图片工具，生成不可编辑的逐页图片并合并成 PDF。", "family": "zh_capability_based_runtime"},
+    {"text": "当前环境没有图片生成能力，但请先为不可编辑图片版 PPT 准备完整研究、逐页提示词和交接包。", "family": "zh_planning_only_runtime"},
+    {"text": "请用完整研究和来源溯源做一套固定版式的图片型演示文稿，最终交付PDF。", "family": "zh_research_backed"}
+  ],
+  "should_not_trigger": [
+    {"text": "请做一个可编辑的PPTX，文字、图表和备注都要能修改。", "family": "route_ppt_master"},
+    {"text": "做成单文件HTML网页演示，可以在浏览器翻页。", "family": "route_guizang"},
+    {"text": "请生成一张16:9的活动海报。", "family": "route_imagegen"},
+    {"text": "帮我做一套PPT。", "family": "ambiguous_format"},
+    {"text": "Create an editable PowerPoint deck with native charts and speaker notes.", "family": "route_ppt_master"},
+    {"text": "Build a responsive single-file HTML presentation.", "family": "route_guizang"},
+    {"text": "Generate one cover illustration for my existing deck.", "family": "route_imagegen"},
+    {"text": "先研究这个主题并给我一个演示大纲，暂时不要生成图片或PDF。", "family": "outline_only"}
+  ],
+  "near_neighbor": [
+    {"text": "我不确定要PPTX还是PDF图片版，你先开始做。", "family": "needs_format_confirmation"},
+    {"text": "把现有PPTX转成PDF，但不要改内容。", "family": "conversion_only"},
+    {"text": "请为可编辑PPT生成十张配图。", "family": "asset_subtask"},
+    {"text": "Make slides that can also be edited later; PDF is acceptable for review.", "family": "editability_conflict"},
+    {"text": "做一个网页版画廊，展示30张16:9图片。", "family": "html_gallery"},
+    {"text": "请评价图片版PPT和可编辑PPTX各自的优缺点，不要制作文件。", "family": "evaluation_only"}
+  ]
+}

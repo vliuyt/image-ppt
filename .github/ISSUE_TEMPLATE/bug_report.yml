@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible Image-PPT problem
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials or private deck content.
+  - type: input
+    id: version
+    attributes:
+      label: Image-PPT version
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Host runtime and selected mode
+      placeholder: Codex / codex-built-in
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: redacted_output
+    attributes:
+      label: Redacted output
+      render: shell
