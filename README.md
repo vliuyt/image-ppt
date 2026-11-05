@@ -132,3 +132,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and the [pro
 ## License
 
 [MIT](LICENSE)
+
+Local QA/PDF scripts require Python 3.11 or newer. Install their dependencies with `python -m pip install -r requirements.txt`. Regression tests additionally require Poppler (`pdftoppm`; on Ubuntu: `sudo apt-get install poppler-utils`).
