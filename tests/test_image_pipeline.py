@@ -99,7 +99,7 @@ class ImagePipelineTests(unittest.TestCase):
                 self.assert_color(sheet, (x + 80, y + 90), self.colors[i])
                 # Each expected ASCII label must actually draw non-background pixels.
                 label = sheet.crop((x, y + 180, x + 200, y + 214)).convert("RGB")
-                self.assertTrue(any(min(pixel) < 100 for pixel in label.getdata()))
+                self.assertTrue(any(low < 100 for low, high in label.getextrema()))
             # Current sheet behavior drops alpha; PDF behavior is tested separately.
             self.assert_color(sheet, (24 + 160, 256 + 90), (0, 0, 0))
 
@@ -197,8 +197,9 @@ class ImagePipelineTests(unittest.TestCase):
         invalid = self.deck / "invalid.pdf"
         invalid.write_bytes(b"not a PDF")
         from pypdf.errors import PdfReadError
-        with self.assertRaises(PdfReadError):
-            assemble.verify_pdf_page_count(invalid, 3)
+        with self.assertLogs("pypdf", level="WARNING"):
+            with self.assertRaises(PdfReadError):
+                assemble.verify_pdf_page_count(invalid, 3)
 
     def test_existing_outputs_are_not_overwritten(self):
         self.write_rows(self.rows)
