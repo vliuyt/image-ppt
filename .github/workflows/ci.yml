@@ -23,7 +23,25 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -r requirements.txt
       - run: python scripts/check_public_release.py
+      - run: python -m unittest discover -s tests -v
+
+  image-regression:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+        pillow: ["12.3.0", "13.0.0"]
+        pypdf: ["6.16.2", "6.21.4"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - run: python -m pip install "Pillow==${{ matrix.pillow }}" "pypdf==${{ matrix.pypdf }}"
       - run: python -m unittest discover -s tests -v
