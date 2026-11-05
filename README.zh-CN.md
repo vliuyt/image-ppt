@@ -76,3 +76,5 @@ GitHub Actions 会在提交、Pull Request、手动触发和每月计划任务�
 ## License
 
 [MIT](LICENSE)
+
+本地图片检查与 PDF 脚本要求 Python 3.11 或更新版本，依赖安装命令为 `python -m pip install -r requirements.txt`。运行回归测试还需要 Poppler（`pdftoppm`；Ubuntu 可执行 `sudo apt-get install poppler-utils`）。
